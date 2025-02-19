@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Diskusi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/source/foto/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--Navbar-->
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div
+          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+        >
+          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img
+              src="/source/foto/logo.png"
+              class="h-8"
+              alt="logo"
+            />
+            <span
+              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >E-Modul</span
+            >
+          </a>
+          <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a
+              href="mt1.html"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 
+              focus:outline-none focus:ring-blue-300 font-medium rounded-lg 
+              text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >Start Learn</a
+            >
+            <button
+              data-collapse-toggle="navbar-cta"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg 
+              md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 
+              dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-cta"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            id="navbar-cta"
+          >
+            <ul
+              class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 
+              rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 
+              dark:border-gray-700"
+            >
+              <li>
+                <a
+                  href="index.html"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent 
+                  md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
+                  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mt1.html"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent 
+                  md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
+                  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Materi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="latihan-umum.html"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent 
+                  md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
+                  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Latihan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="diskusi.html"
+                  class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 
+                  md:dark:text-blue-500"
+                  aria-current="page"
+                  >Diskusi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="tentang.html"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent 
+                  md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
+                  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Tentang</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <!--Navbar-->
+
+    <!--Forum Diskusi-->
+    <div class="bg-gray-100 flex justify-center items-center min-h-screen">
+        <div class="w-full max-w-2xl bg-white p-6 rounded-lg shadow-lg">
+            <h1 class="text-2xl font-bold text-center mb-4">Forum Diskusi</h1>
+            
+            <div id="messages" class="space-y-4 mb-4 overflow-y-auto max-h-96 p-2 border rounded-lg bg-gray-50"></div>
+            
+            <div class="flex space-x-2 items-center">
+                <input id="username" type="text" placeholder="Nama" class="w-1/4 p-2 border rounded-lg focus:outline-none">
+                <input id="message" type="text" placeholder="Tulis pesan..." class="w-2/3 p-2 border rounded-lg focus:outline-none">
+                
+                <div class="relative">
+                    <button onclick="toggleDropdown()" id="uploadButton" class="p-2 rounded-lg transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                    <div id="uploadDropdown" class="hidden absolute bg-white border rounded-lg shadow-md mt-2 p-2">
+                        <label class="block cursor-pointer p-1 hover:bg-gray-100">
+                            Unggah Foto
+                            <input id="image" type="file" accept="image/*" class="hidden" onchange="previewFile('image')">
+                        </label>
+                    </div>
+                </div>
+                
+                <button onclick="sendMessage()" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Kirim</button>
+            </div>
+            
+            <div id="preview" class="mt-4 hidden p-2 border rounded-lg bg-gray-50"></div>
+        </div>
+    </div>
+    <!--Forum Diskusi-->
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", loadMessages);
+
+        function toggleDropdown() {
+            let dropdown = document.getElementById("uploadDropdown");
+            let uploadButton = document.getElementById("uploadButton");
+            dropdown.classList.toggle("hidden");
+            uploadButton.classList.toggle("rotate-90");
+        }
+
+        function previewFile(type) {
+            let fileInput = document.getElementById(type);
+            let file = fileInput.files[0];
+            let previewContainer = document.getElementById("preview");
+            previewContainer.innerHTML = "";
+            previewContainer.classList.remove("hidden");
+            
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(event) {
+                    if (type === "image") {
+                        previewContainer.innerHTML = `<img src="${event.target.result}" class="w-32 rounded-lg">`;
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function sendMessage() {
+            let username = document.getElementById("username").value.trim();
+            let message = document.getElementById("message").value.trim();
+            let previewContainer = document.getElementById("preview");
+            
+            if (username === "" || (message === "" && previewContainer.innerHTML === "")) return;
+            
+            let fileInput = document.getElementById("image").files[0];
+            let fileType = fileInput ? "image" : "text";
+            let fileContent = fileInput ? previewContainer.innerHTML : "";
+            
+            saveMessage(username, message, fileType, fileContent);
+            previewContainer.classList.add("hidden");
+            previewContainer.innerHTML = "";
+        }
+
+        function saveMessage(username, message, type, content) {
+            let messages = JSON.parse(localStorage.getItem("messages")) || [];
+            let newMessage = { username, message, type, content, timestamp: new Date().toLocaleString() };
+            messages.push(newMessage);
+            localStorage.setItem("messages", JSON.stringify(messages));
+
+            document.getElementById("message").value = "";
+            document.getElementById("image").value = "";
+            displayMessages();
+        }
+
+        function loadMessages() {
+            displayMessages();
+        }
+
+        function displayMessages() {
+            let messages = JSON.parse(localStorage.getItem("messages")) || [];
+            let messagesContainer = document.getElementById("messages");
+            messagesContainer.innerHTML = "";
+
+            messages.forEach(msg => {
+                let messageElement = document.createElement("div");
+                messageElement.classList.add("p-2", "border", "rounded-lg", "bg-white", "flex", "flex-col", "justify-between", "items-start");
+                
+                let content = `<div><strong>${msg.username}</strong> <span class='text-xs text-gray-500'>(${msg.timestamp})</span><br>${msg.message}</div>`;
+                
+                if (msg.type === "image") {
+                    content += msg.content;
+                }
+                
+                messageElement.innerHTML = content;
+                
+                let deleteButton = document.createElement("button");
+                deleteButton.innerHTML = `<i class="bx bx-trash text-grey-500 hover:text-grey-700"></i>
+`;
+                deleteButton.classList.add("mt-2");
+                deleteButton.onclick = function() { deleteMessage(msg.timestamp); };
+                
+                messageElement.appendChild(deleteButton);
+                messagesContainer.appendChild(messageElement);
+            });
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function deleteMessage(timestamp) {
+            let messages = JSON.parse(localStorage.getItem("messages")) || [];
+            messages = messages.filter(msg => msg.timestamp !== timestamp);
+            localStorage.setItem("messages", JSON.stringify(messages));
+            displayMessages();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAzdrEFduc8KRZ9S__6gAvyLAF24G0b64I",
+        authDomain: "e-modul-mtk.firebaseapp.com",
+        projectId: "e-modul-mtk",
+        storageBucket: "e-modul-mtk.firebasestorage.app",
+        messagingSenderId: "449769206469",
+        appId: "1:449769206469:web:07224b72b1b7006550f6ac",
+        measurementId: "G-JNGGY1SG4M"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+</body>
+</html>

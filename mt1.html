@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/source/foto/logo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          MathJax.typesetPromise();
+      });
+  </script>
+  <script>
+      function showSlide(index) {
+          const slides = document.querySelectorAll('.slide');
+          slides.forEach((slide, i) => {
+              slide.classList.add('hidden');
+              if (i === index) {
+                  slide.classList.remove('hidden');
+              }
+          });
+      }
+
+      let currentSlide = 0;
+      function nextSlide() {
+          const slides = document.querySelectorAll('.slide');
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+      }
+
+      function previousSlide() {
+          const slides = document.querySelectorAll('.slide');
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          showSlide(currentSlide);
+      }
+  </script>
+    <title>E-Modul</title>
+</head>
+<body>
+    
+    <!--Navbar-->
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="/source/foto/logo.png" class="h-8" alt="Flowbite Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">E-Modul</span>
+      </a>
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <a href="index.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Back</a>
+          <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+      </div>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+        <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="index.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Beranda</a>
+          </li>
+          <li>
+            <a href="mt1.html" class=" block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-grey-500" aria-current="page"">Materi</a>
+          </li>
+          <li>
+            <a href="latihan-umum.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Latihan</a>
+          </li>
+          <li>
+            <a
+              href="diskusi.html"
+              class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent 
+              md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 
+              dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >Diskusi</a
+            >
+          </li>
+          <li>
+            <a href="tentang.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Tentang</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+    <!--Navbar-->
+
+    <!--Latihan-->
+    <h1
+          class="mb-4 text-4xl p-12 font-extrabold leading-none text-center tracking-tight text-gray-900 md:text-2xl lg:text-4xl dark:text-white"
+        >
+          Materi Trigonometri
+    </h1>
+    <div data-aos="fade-up" data-aos-duration="1500" class="flex justify-center items-center p-4">
+        <video class="w-[90%] max-w-5xl aspect-video h-auto" controls>
+          <source src="/source/video/trigono.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+    <!--Latihan-->
+
+
+    <!--Resume-->
+
+    <div class="bg-cyan-50 mt-12">
+      <h1 class="mb-4 text-4xl p-12 font-extrabold leading-none text-center tracking-tight text-gray-900 md:text-2xl lg:text-4xl dark:text-white">
+        Rangkuman Materi Trigonometri
+      </h1>
+      <div data-aos="fade-up" data-aos-duration="1500" class="bg-flex items-center justify-center">
+
+        <div class="container mx-auto p-6">
+          
+          <!-- Penjelasan Umum -->
+          <div class="bg-white p-6 rounded-lg shadow-md w-auto">
+            <h2 class="text-2xl text-center font-bold mb-4">Apa itu Trigonometri?</h2>
+              <p class="text-center">
+                Trigonometri adalah cabang matematika yang mempelajari hubungan antara sisi dan sudut segitiga.
+                Trigonometri sering digunakan dalam fisika, teknik, dan astronomi.
+              </p>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-6 mt-6">
+          <!-- Penjelasan Trigonometri -->
+          <div class="p-6 bg-white shadow-lg rounded-lg w-full md:w-1/2">
+            <img src="segitiga_trigonometri.png" alt="Segitiga Siku-Siku dengan Sudut Theta" class="mx-auto mb-4">
+            <p class="text-gray-700">
+              Dalam segitiga siku-siku, terdapat tiga sisi utama:
+            </p>
+            <ul class="list-disc list-inside text-gray-700 mt-2">
+              <li><b>Sisi Miring:</b> Sisi terpanjang yang berseberangan dengan sudut siku-siku.</li>
+              <li><b>Sisi Depan:</b> Sisi yang berada di depan sudut yang sedang dihitung.</li>
+              <li><b>Sisi Samping:</b> Sisi yang berdekatan dengan sudut yang sedang dihitung.</li>
+            </ul>
+          </div>
+          
+          <!-- Slider Rasio Trigonometri -->
+          <div data-aos="fade-up" data-aos-duration="1500" class="p-6 bg-white shadow-lg rounded-lg text-center w-full md:w-1/2">
+            <h1 class="text-2xl font-bold text-center mb-6">Rasio Trigonometri</h1>
+            <div id="slider">
+              <!-- Sinus -->
+              <div class="slide">
+                <h2 class="text-xl font-semibold mb-4">Sinus: \( \sin \theta = \frac{\text{Sisi Depan}}{\text{Sisi Miring}} \)</h2>
+                <p>Contoh: Jika sisi depan = 3 dan sisi miring = 5, maka:</p>
+                <p>\( \sin \theta = \frac{3}{5} = 0.6 \)</p>
+              </div>
+              
+              <!-- Cosinus -->
+              <div class="slide hidden">
+                <h2 class="text-xl font-semibold mb-4">Cosinus: \( \cos \theta = \frac{\text{Sisi Samping}}{\text{Sisi Miring}} \)</h2>
+                <p>Contoh: Jika sisi samping = 4 dan sisi miring = 5, maka:</p>
+                <p>\( \cos \theta = \frac{4}{5} = 0.8 \)</p>
+              </div>
+              
+              <!-- Tangen -->
+              <div class="slide hidden">
+                <h2 class="text-xl font-semibold mb-4">Tangen: \( \tan \theta = \frac{\text{Sisi Depan}}{\text{Sisi Samping}} \)</h2>
+                <p>Contoh: Jika sisi depan = 3 dan sisi samping = 4, maka:</p>
+                <p>\( \tan \theta = \frac{3}{4} = 0.75 \)</p>
+              </div>
+              
+              <!-- Cosecan -->
+              <div class="slide hidden">
+                <h2 class="text-xl font-semibold mb-4">Cosecan: \( \csc \theta = \frac{1}{\sin \theta} \)</h2>
+                <p>Contoh: Jika \( \sin \theta = 0.6 \), maka:</p>
+                <p>\( \csc \theta = \frac{1}{0.6} = 1.67 \)</p>
+              </div>
+              
+              <!-- Secan -->
+              <div class="slide hidden">
+                <h2 class="text-xl font-semibold mb-4">Secan: \( \sec \theta = \frac{1}{\cos \theta} \)</h2>
+                <p>Contoh: Jika \( \cos \theta = 0.8 \), maka:</p>
+                <p>\( \sec \theta = \frac{1}{0.8} = 1.25 \)</p>
+              </div>
+              
+              <!-- Cotangen -->
+              <div class="slide hidden">
+                <h2 class="text-xl font-semibold mb-4">Cotangen: \( \cot \theta = \frac{1}{\tan \theta} \)</h2>
+                <p>Contoh: Jika \( \tan \theta = 0.75 \), maka:</p>
+                <p>\( \cot \theta = \frac{1}{0.75} = 1.33 \)</p>
+              </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="flex justify-between items-center mt-auto pt-16">
+              <button onclick="previousSlide()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                Previous
+              </button>
+              <button onclick="nextSlide()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+    <div class="bg-cyan-50">
+      <div class="container mx-auto p-6">
+        <!-- Header -->
+        <h1 class="mb-4 text-4xl p-12 font-extrabold leading-none text-center tracking-tight text-gray-900 md:text-2xl lg:text-4xl dark:text-white">
+          Tabel Sudut-Sudut Istimewa
+        </h1>
+    
+        <!-- Tabel Sudut Istimewa -->
+        <div data-aos="fade-up" data-aos-duration="1500" class="bg-white p-6 rounded-lg shadow-md mb-12">
+          <table class="min-w-full table-auto border-collapse">
+            <thead>
+              <tr>
+                <th class="px-4 py-2 text-left border-b font-semibold text-gray-700">Sudut (°)</th>
+                <th class="px-4 py-2 text-left border-b font-semibold text-gray-700">Sinus (sin)</th>
+                <th class="px-4 py-2 text-left border-b font-semibold text-gray-700">Kosinus (cos)</th>
+                <th class="px-4 py-2 text-left border-b font-semibold text-gray-700">Tangen (tan)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-gray-100">
+                <td class="px-4 py-2 border-b text-center">30°</td>
+                <td class="px-4 py-2 border-b text-center">0.5</td>
+                <td class="px-4 py-2 border-b text-center">√3/2</td>
+                <td class="px-4 py-2 border-b text-center">√3/3</td>
+              </tr>
+              <tr class="hover:bg-gray-100">
+                <td class="px-4 py-2 border-b text-center">45°</td>
+                <td class="px-4 py-2 border-b text-center">√2/2</td>
+                <td class="px-4 py-2 border-b text-center">√2/2</td>
+                <td class="px-4 py-2 border-b text-center">1</td>
+              </tr>
+              <tr class="hover:bg-gray-100">
+                <td class="px-4 py-2 border-b text-center">60°</td>
+                <td class="px-4 py-2 border-b text-center">√3/2</td>
+                <td class="px-4 py-2 border-b text-center">0.5</td>
+                <td class="px-4 py-2 border-b text-center">√3</td>
+              </tr>
+              <tr class="hover:bg-gray-100">
+                <td class="px-4 py-2 border-b text-center">90°</td>
+                <td class="px-4 py-2 border-b text-center">1</td>
+                <td class="px-4 py-2 border-b text-center">0</td>
+                <td class="px-4 py-2 border-b text-center">undefined</td>
+              </tr>
+              <tr class="hover:bg-gray-100">
+                <td class="px-4 py-2 border-b text-center">0°</td>
+                <td class="px-4 py-2 border-b text-center">0</td>
+                <td class="px-4 py-2 border-b text-center">1</td>
+                <td class="px-4 py-2 border-b text-center">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <!--Resume-->
+
+    <!--PDF Download-->
+    <div data-aos="fade-up" data-aos-duration="1500" class="space-y-4 pt-12 pl-8 pr-8">
+      <details
+          class="group border-s-4 border-cyan-400 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+        >
+          <summary class="flex cursor-pointer items-center justify-between gap-1.5">
+            <h2 class="text-lg font-medium text-gray-900">
+              Rangkuman Materi Trigonometri PDF
+            </h2>
+      
+            <span class="shrink-0 rounded-full bg-cyan-300 p-1.5 text-gray-900 sm:p-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5 shrink-0 transition duration-300 group-open:-rotate-45"
+                viewBox="0 0 20 20"
+                fill="white"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </summary>
+      
+          <p class="mt-4 leading-relaxed text-gray-700">
+            The following is a PDF of the Exponent Material Summary in Indonesian that can be downloaded
+          </p>
+          <a href="/source/materi/handout.pdf" class="inline-flex items-center mt-6 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Download
+            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+          </a>
+        </details>
+    </div>
+    <!--PDF Download-->
+
+
+    <!--Latihan Soal-->
+    <div class="mt-12 p-6 bg-cyan-50 text-gray-800">
+      <div class="container mx-auto p-6">
+        <h1 data-aos="fade-up" data-aos-duration="1500" class="text-3xl font-bold text-center mb-6">Latihan Soal</h1>
+  
+        <div data-aos="fade-up" data-aos-duration="1500" id="quiz" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Question Template -->
+        </div>
+  
+        <div data-aos="fade-up" data-aos-duration="1500" class="text-center mt-8">
+            <button 
+                class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
+                onclick="checkAnswers()"
+            >
+                Cek Jawaban
+            </button>
+        </div>
+      </div>
+    </div>
+    
+    <!--Latihan Soal-->
+
+    <!--pr-->
+    <!-- Container utama -->
+    <div class=" pt-12 pl-8 pr-8 ">
+
+      <!-- Judul Tugas -->
+      <h1 class="text-3xl font-bold text-center mb-6">Tugas Trigonometri</h1>
+
+      <div data-aos="fade-up" data-aos-duration="1500" class="space-y-4 mb-24 ">
+        <details
+          class="group border-s-4 border-indigo-500 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+        >
+          <summary class="flex cursor-pointer items-center justify-between gap-1.5">
+            <h2 class="text-lg font-medium text-gray-900">
+              Cara Mengumpulkan Tugas
+            </h2>
+      
+            <span class="shrink-0 rounded-full bg-indigo-500 p-1.5 text-gray-900 sm:p-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5 shrink-0 transition duration-300 group-open:-rotate-45"
+                viewBox="0 0 20 20"
+                fill="white"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </summary>
+      
+          <p class="mt-4 leading-relaxed text-gray-700">
+            <!-- Container utama -->
+            <div>
+
+              <!-- Langkah 1 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                  <p class="text-lg font-semibold">1. Kerjakan di kertas</p>
+              </div>
+
+              <!-- Langkah 2 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                  <p class="text-lg font-semibold">2. Kemudian foto/scan kertas yang berisi jawaban kalian</p>
+              </div>
+
+              <!-- Langkah 3 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                  <p class="text-lg font-semibold">3. Kumpulkan di tombol biru di paling bawah</p>
+              </div>
+
+              <!-- Langkah 4 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                  <p class="text-lg font-semibold">4. Silahkan isi nama, kelas, absen, dan upload foto/scan tugas kalian</p>
+              </div>
+
+              <!-- Langkah 5 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                  <p class="text-lg font-semibold">5. Tugas kalian berhasil dikumpulkan</p>
+              </div>
+
+              <!--Button-->
+              <a class="bg-blue-500 flex mt-12 justify-center text-white align-center px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              href="https://forms.gle/fKA19yX2ALn5QaNB7">
+                Kirim Tugas
+              </a>
+              <!--Button-->
+
+          </p>
+        </details>
+
+        <details data-aos="fade-up" data-aos-duration="1500"
+          class="group border-s-4 border-indigo-500 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+          open
+        >
+          <summary class="flex cursor-pointer items-center justify-between gap-1.5">
+            <h2 class="text-lg font-medium text-gray-900">
+              Kerjakan Soal Berikut!
+            </h2>
+      
+            <span class="shrink-0 rounded-full bg-indigo-500 p-1.5 text-gray-900 sm:p-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5 shrink-0 transition duration-300 group-open:-rotate-45"
+                viewBox="0 0 20 20"
+                fill="white"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </summary>
+      
+          <p class="mt-4 leading-relaxed text-gray-700">
+            <!-- Soal 1 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                <p class="text-lg font-semibold">1. Calculate the result of <span class="text-xl font-bold">(3<sup>4</sup> × 3<sup>2</sup>) ÷ 3<sup>3</sup></span>.</p>
+              </div>
+  
+              <!-- Soal 2 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                  <p class="text-lg font-semibold">2. Simplify expressions : <span class="text-xl font-bold"> (2<sup>5</sup> × 2<sup>3</sup>) ÷ 2<sup>6</sup></span>.</p>
+              </div>
+  
+              <!-- Soal 3 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                  <p class="text-lg font-semibold">3. Calculate the result of <span class="text-xl font-bold">(4<sup>3</sup>)<sup>2</sup> × 4<sup>1</sup></span>.</p>
+              </div>
+  
+              <!-- Soal 4 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                  <p class="text-lg font-semibold">4. Simplify expressions: <span class="text-xl font-bold"> (5<sup>7</sup> ÷ 5<sup>2</sup>) ÷ 5<sup>3</sup></span>.</p>
+              </div>
+  
+              <!-- Soal 5 -->
+              <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                  <p class="text-lg font-semibold">5. Calculate the result of <span class="text-xl font-bold">(2<sup>3</sup> × 4<sup>2</sup>) ÷ (2<sup>2</sup> × 4<sup>1</sup>)</span>.</p>
+              </div>
+            </p>
+        </details>
+      </div>
+
+  </div>
+    <!--pr-->
+
+    <footer
+        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600"
+      >
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+          >© 2024
+          <a href="#" class="hover:underline">E-Modul™</a>.
+          All Rights Reserved.
+        </span>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      // Data soal dan jawaban
+        const questions = [
+            {
+                question: "1. jika diketahui suatu segitiga dengan sudut alpha memiliki sisi di depan sudut alpha 12, dan sisi miring 13. Hitunglah sin alpha!",
+                options: ["5/13", "12/13", "13/12", "5/12"],
+                correct: 1
+            },
+            {
+                question: "2. jika diketahui suatu segitiga dengan sudut alpha memiliki sisi di samping sudut alpha 3, dan sisi miring 5. Hitunglah cos alpha!",
+                options: ["4/3", "3/4", "3/5", "4/5"],
+                correct: 2
+            },
+            {
+                question: "3. jika diketahui suatu segitiga dengan sudut alpha memiliki sisi di depan sudut alpha 7, dan sisi disampingnya adalah 24. Hitunglah tan alpha!",
+                options: ["7/24", "25/7", "24/7", "7/25"],
+                correct: 0
+            }
+        ];
+
+
+      // Generate HTML untuk setiap soal
+      const quizContainer = document.getElementById('quiz');
+
+      questions.forEach((q, index) => {
+          const questionHTML = `
+              <div class="p-4 bg-white shadow rounded">
+                  <p class="mb-4 font-semibold">${q.question}</p>
+                  ${q.options.map((option, i) => `
+                      <label class="block">
+                          <input 
+                              type="radio" 
+                              name="question${index}" 
+                              value="${i}" 
+                              class="mr-2">
+                          ${option}
+                      </label>
+                  `).join('')}
+                  <p id="feedback${index}" class="mt-2 text-sm font-semibold"></p>
+              </div>
+          `;
+
+          quizContainer.innerHTML += questionHTML;
+      });
+
+      // Fungsi untuk memeriksa jawaban
+      function checkAnswers() {
+          questions.forEach((q, index) => {
+              const selected = document.querySelector(`input[name="question${index}"]:checked`);
+              const feedback = document.getElementById(`feedback${index}`);
+
+              if (!selected) {
+                  feedback.textContent = "Pilih jawaban terlebih dahulu!";
+                  feedback.classList.add("text-red-500");
+                  return;
+              }
+
+              const isCorrect = parseInt(selected.value) === q.correct;
+
+              feedback.textContent = isCorrect ? "Jawaban benar!" : "Jawaban salah!";
+              feedback.classList.remove("text-red-500", "text-green-500");
+              feedback.classList.add(isCorrect ? "text-green-500" : "text-red-500");
+          });
+      }
+  </script>
+  
+</body>
+</html>
