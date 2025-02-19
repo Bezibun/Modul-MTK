@@ -1,54 +1,29 @@
 const questions = [
     {
-        question: "Berapa hasil dari 2x + 5x?",
-        options: ["3x", "5x", "7x", "7"],
+        question: "Hitung nilai dari sin30∘",
+        options: ["1/5", "1/3", "1/2", "1"],
         answer: 2
     },
     {
-        question: "Berapa hasil dari 24y + 10y?",
-        options: ["24y", "10y", "34y", "34yy"],
+        question: "Berapakah nilai dari cos ⁡60∘?",
+        options: ["1/4", "1", "1/2", "√3/2"],
         answer: 2
     },
     {
-        question: "Manakah yang bukan termasuk variabel dari 6x + 3y + 2",
-        options: ["x", "y", "x dan y", "6 dan 3"],
+        question: "Jika tan 45∘ = x, maka nilai x adalah",
+        options: ["0", "1", "2", "3"],
         answer: 3
     },
     {
-        question: "Manakah yang termasuk koefisien dari 6x + 3y + 2",
-        options: ["x", "6", "y", "x dan y"],
+        question: "Hitunglah nilai dari sin 90∘",
+        options: ["0", "1", "2", "3"],
         answer: 1
     },
     {
-        question: "Manakah yang tidak termasuk koefisien dari 5x + 2y + 12",
-        options: ["12", "2", "5", "5 dan 2"],
-        answer: 0
-    },
-    {
-        question: "Manakah yang termasuk konstanta dari 2x + 18y + 32",
-        options: ["x", "2", "32", "x dan y"],
-        answer: 2
-    },
-    {
-        question: "Manakah yang termasuk koefisien dari 8x + 10y + 20",
-        options: ["x", "10", "y", "20"],
+        question: "jika cos 0∘ = y, berapakah nilai y?",
+        options: ["0", "1", "2", "3"],
         answer: 1
     },
-    {
-        question: "Manakah yang termasuk variabel dari x + 5y + 2",
-        options: ["2", "5", "5 dan 2", "x dan y"],
-        answer: 3
-    },
-    {
-        question: "Manakah yang termasuk konstanta 6x + 3y + 2?",
-        options: ["x dan y", "6 dan 3", "2", "6 dan y"],
-        answer: 2
-    },
-    {
-        question: "Berapa hasil dari 2x + 5y - x + 2y?",
-        options: ["x + 7y", "3x + 5y", "x - 5y", "3x + 7y"],
-        answer: 0
-    }
 ];
 
 let currentQuestionIndex = 0;
