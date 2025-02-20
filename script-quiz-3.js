@@ -44,7 +44,7 @@ function showQuestion() {
     const optionsContainer = document.getElementById("options-container");
     const nextBtn = document.getElementById("next-btn");
 
-    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of 10`;
+    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of 5`;
     questionText.textContent = questions[currentQuestionIndex].question;
 
     optionsContainer.querySelectorAll(".option-btn").forEach((btn, index) => {

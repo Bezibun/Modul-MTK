@@ -12,7 +12,7 @@ const questions = [
     {
         question: "Jika tan 45∘ = x, maka nilai x adalah",
         options: ["0", "1", "2", "3"],
-        answer: 3
+        answer: 1
     },
     {
         question: "Hitunglah nilai dari sin 90∘",
@@ -44,7 +44,7 @@ function showQuestion() {
     const optionsContainer = document.getElementById("options-container");
     const nextBtn = document.getElementById("next-btn");
 
-    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of 10`;
+    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of 5`;
     questionText.textContent = questions[currentQuestionIndex].question;
 
     optionsContainer.querySelectorAll(".option-btn").forEach((btn, index) => {

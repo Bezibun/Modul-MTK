@@ -11,8 +11,8 @@ const questions = [
     },
     {
         question: "Jika cos A = 1/2, maka nilai A adalah",
-        options: ["0", "1/2", "1", "1/4"],
-        answer: 1
+        options: ["⁡60∘", "⁡30∘", "⁡90∘", "⁡45∘"],
+        answer: 0
     },
     {
         question: "Tentukan nilai dari sin 45∘ + cos 45∘ ",
@@ -44,7 +44,7 @@ function showQuestion() {
     const optionsContainer = document.getElementById("options-container");
     const nextBtn = document.getElementById("next-btn");
 
-    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of 10`;
+    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of 5`;
     questionText.textContent = questions[currentQuestionIndex].question;
 
     optionsContainer.querySelectorAll(".option-btn").forEach((btn, index) => {

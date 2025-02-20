@@ -10,9 +10,9 @@ const questions = [
         answer: 2
     },
     {
-        question: "Sebuah bukit memiliki kemiringan dengan sudut 30∘. Jika seseorang harus berjalan sejauh 200 meter untuk mencapai puncak bukit, tentukan ketinggian vertikal yang telah didaki.",
+        question: "Sebuah bukit memiliki kemiringan dengan sudut 30∘. Jika seseorang harus berjalan sejauh 200 meter mendaki kemiringan bukit untuk mencapai puncak bukit, tentukan ketinggian vertikal yang telah didaki.",
         options: ["100 meter", "200 meter", "300 meter", "400 meter"],
-        answer: 0
+        answer: 3
     },
     {
         question: "Sebuah perahu berlayar dari pantai ke wilayah A sejauh 100 meter dengan sudut arah 60∘ dari garis pantai. Tentukan jarak mendatar perahu dari titik awal di pantai dengan wilayah A.",
@@ -44,7 +44,7 @@ function showQuestion() {
     const optionsContainer = document.getElementById("options-container");
     const nextBtn = document.getElementById("next-btn");
 
-    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of 10`;
+    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of 5`;
     questionText.textContent = questions[currentQuestionIndex].question;
 
     optionsContainer.querySelectorAll(".option-btn").forEach((btn, index) => {
